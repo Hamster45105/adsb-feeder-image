@@ -327,6 +327,19 @@ cd /opt/adsb
 # make sure the version information is correct
 # deal with remote branches like origin/somebranch that contain forward slashes
 # and end up being part of the VERSION string - those need to be escaped for sed
+OLDVERSION=$(cat /opt/adsb/adsb.im.version)
+OLDVERSION_BASE=${OLDVERSION%%(*}
+VERSION_BASE=${VERSION%%(*}
+COUNTER=$(jq '._ADSBIM_STATE_COUNTER' /opt/adsb/config/config.json)
+if [[ "$OLD_COUNTER" == "null" ]]; then
+    OLD_COUNTER=0
+fi
+if [[ "$OLDVERSION_BASE" != "$VERSION_BASE" ]]; then
+    echo "version changed from $OLDVERSION_BASE to $VERSION_BASE"
+    COUNTER=$(((RANDOM * RANDOM)%1000000))
+fi
+JQ_INPLACE="$(jq --arg c "$COUNTER" '._ADSBIM_STATE_COUNTER = $c' /opt/adsb/config/config.json)"
+echo -E "$JQ_INPLACE" > /opt/adsb/config/config.json
 echo "$VERSION" > /opt/adsb/adsb.im.version
 SEDVERSION=${VERSION//\//\\\/}
 sed -i "s/BASE_VERSION=.*/BASE_VERSION=$SEDVERSION/" /opt/adsb/config/.env

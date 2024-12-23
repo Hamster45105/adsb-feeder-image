@@ -1,4 +1,5 @@
 Changes since v2.2.4 include:
+- privacy respecting attempt to get a count of installed adsb.im feeders (see commit message for more details)
 - dietpi: fix os update from webinterface producing a bad state requiring reboot
 - fix range outline reset not working in many cases
 - fix up base image reporting in log sanitizer

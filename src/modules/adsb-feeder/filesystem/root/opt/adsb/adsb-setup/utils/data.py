@@ -326,6 +326,7 @@ class Data:
             "_ADSBIM_STATE_BOARD_NAME",
             tags=["board_name", "norestore"],
         ),
+        Env("_ADSBIM_STATE_COUNTER", default=0, tags=["counter", "norestore"]),
         # ports used by our proxy system
         Env("AF_WEBPORT", default=80, tags=["webport", "norestore"]),
         Env("AF_DAZZLE_PORT", default=9999, tags=["dazzleport", "norestore"]),
