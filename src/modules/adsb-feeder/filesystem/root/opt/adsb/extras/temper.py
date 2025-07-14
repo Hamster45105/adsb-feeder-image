@@ -91,7 +91,7 @@ class USBList(object):
     productid = self._readfile(os.path.join(dirname, 'idProduct'))
 
     # added to only show supported devices when calling the list() method
-    if not self.is_known_id(vendorid, productid):
+    if not self.is_known_id(int(vendorid, 16), int(productid, 16)):
       return None
 
     info['productid'] = int(productid, 16)
