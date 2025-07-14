@@ -385,7 +385,7 @@ class Temper(object):
     '''
     if use_json:
       print(json.dumps(self.usb_devices, indent=4))
-      return
+      return self.usb_devices
 
     for _, info in sorted(self.usb_devices.items(),
                           key=lambda x: x[1]['busnum'] * 1000 + \
