@@ -1,5 +1,6 @@
 Changes since v3.0.11
 =======
+- web UI: improve text on backup page
 - skystats: force DB on even on low-mem systems
 - recovery app: fix recover-to-tag
 - web UI: update OpenSky URL
