@@ -24,7 +24,11 @@
             There are very few circumstances where this is something you want to manually add. One might be a
             situation where you want to feed an aggregator that uses the 'standard' format of all the account-less
             aggregators, but that isn't supported out of the box.
-            Add the configuration that you need here - it will be appended to the Ultrafeeder config.
+            <br>Add the configuration that you need here - it will be appended to the Ultrafeeder config.
+            <br>Example: adsb,feed.adsb.xyz,30004,beast_reduce_plus_out;
+            <br>Example with uuid: adsb,feed.adsb.xyz,30004,beast_reduce_plus_out,uuid=a67c44ce-[...];
+            <br>Example for mlat: mlat,feed.adsb.xyz,31009;
+            <br>Make sure to end each entry / line with a semicolon (;)
           </label>
         </div>
         {% if is_enabled('stage2') %}
