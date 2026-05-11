@@ -29,27 +29,30 @@
         </div>
         {% if is_enabled('stage2') %}
         <div class="col-12 mb-2">Stage2: applied to all microsite ultrafeeder instances (SITENUM is replaced with 00, 01, 02 and so forth):</div>
-        <div class="col-8">
-          <input class="mx-auto w-100" id="ultrafeeder_extra_args_microsites" name="ultrafeeder_extra_args_microsites"
-                 type="text" value="{{ env_value_by_tag('ultrafeeder_extra_args_microsites') }}">
+        <div class="col-12">
+          <textarea class="mx-auto w-100" id="ultrafeeder_extra_args_microsites" name="ultrafeeder_extra_args_microsites" rows="10"
+                    placeholder="adsb,feed.adsb.xyz,234SITENUM,beast_reduce_plus_out"
+                    >{{ env_value_by_tag('ultrafeeder_extra_args_microsites') }}</textarea>
         </div>
         <div class="col-4">
           <button type="submit" class="btn btn-primary mx-auto w-100" name="ultrafeeder_extra_args_microsites--submit"
                   value="go">Apply</button>
         </div>
         <div class="col-12 mb-2">Stage2: applied to the ultrafeeder instance with combined data:</div>
-        <div class="col-8">
-          <input class="mx-auto w-100" id="ultrafeeder_extra_args" name="ultrafeeder_extra_args" type="text"
-                 value="{{ env_value_by_tag('ultrafeeder_extra_args') }}">
+        <div class="col-12">
+          <textarea class="mx-auto w-100" id="ultrafeeder_extra_args" name="ultrafeeder_extra_args" rows="10"
+                    placeholder="adsb,feed.adsb.xyz,30004,beast_reduce_plus_out"
+                    >{{ env_value_by_tag('ultrafeeder_extra_args') }}</textarea>
         </div>
         <div class="col-4">
           <button type="submit" class="btn btn-primary mx-auto w-100" name="ultrafeeder_extra_args--submit"
                   value="go">Apply</button>
         </div>
         {% else %}
-        <div class="col-8">
-          <input class="mx-auto w-100" id="ultrafeeder_extra_args" name="ultrafeeder_extra_args" type="text"
-                 value="{{ env_value_by_tag('ultrafeeder_extra_args') }}">
+        <div class="col-12">
+          <textarea class="mx-auto w-100" id="ultrafeeder_extra_args" name="ultrafeeder_extra_args" rows="10"
+                    placeholder="adsb,feed.adsb.xyz,30004,beast_reduce_plus_out"
+                    >{{ env_value_by_tag('ultrafeeder_extra_args') }}</textarea>
         </div>
         <div class="col-4">
           <button type="submit" class="btn btn-primary mx-auto w-100" name="ultrafeeder_extra_args--submit"
@@ -77,7 +80,7 @@
           <textarea class="mx-auto w-100" id="ultrafeeder_extra_env" name="ultrafeeder_extra_env" rows="10"
                     placeholder="READSB_RTLSDR_PPM=22&#13;&#10;READSB_RANGE_OUTLINE_HOURS=72">{{ env_value_by_tag('ultrafeeder_extra_env') }}</textarea>
         </div>
-        <div class="col-12">
+        <div class="col-4">
           <button type="submit" class="btn btn-primary mx-auto w-100" name="ultrafeeder_extra_env--submit"
                   value="go">Apply</button>
         </div>
