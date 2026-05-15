@@ -430,11 +430,6 @@ if [ -f /opt/adsb/os.adsb.feeder.image ] ; then
     echo 128 > /sys/module/usbcore/parameters/usbfs_memory_mb
 fi
 
-if [[ -f /opt/adsb/ais/shipxplorer/data/plugins/marinetraffic_option.pjs ]]; then
-    rm -f /opt/adsb/ais/shipxplorer/data/plugins/marinetraffic_option.pjs
-    docker stop shipfeeder # will be started by compose up which happens after update
-fi
-
 # shellcheck disable=SC2164
 cd /opt/adsb
 
