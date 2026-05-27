@@ -878,6 +878,7 @@ class AdsbIm:
             "connection",
         ]
         headers = [(k, v) for k, v in res.raw.headers.items() if k.lower() not in excluded_headers]
+        headers.append(("Access-Control-Allow-Origin", "*"))
 
         response = Response(res.content, res.status_code, headers=headers)
         return response

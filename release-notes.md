@@ -1,5 +1,6 @@
 Changes since v3.0.11
 =======
+- beta-notes: fixup AIS ship display in tar1090
 - beta-notes: update all containers
 - beta-notes: fixup stage2 webproxy
 - expert setup: easier env var and ultrafeeder args entry
