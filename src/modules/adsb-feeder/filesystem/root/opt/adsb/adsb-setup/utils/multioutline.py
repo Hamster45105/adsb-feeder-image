@@ -109,10 +109,11 @@ class MultiOutline:
                 oldHash = hwt.get("multioutline_hash")
 
         if oldHash == newHash:
-            print_err("no need to regenerate combined heywhatsthat outlines, already current", level=8)
+            print_err(f"no need to regenerate combined heywhatsthat outlines, already current {oldHash}", level=8)
             return None
 
         data = []
+        ids = []
         for response in responses:
             try:
                 hwt = json.loads(response)
@@ -120,6 +121,7 @@ class MultiOutline:
                 print_err(f"create_heywhatsthat: json.loads failed on response: {response}")
             else:
                 data.append(hwt)
+                ids.append(hwt.get("id", "unknown"))
 
         if len(data) > 0:
             lat = data[0]["lat"]
@@ -130,6 +132,7 @@ class MultiOutline:
 
         result = {
             "id": "combined",
+            "ids": ids,
             "lat": lat,
             "lon": lon,
             "rings": [],
